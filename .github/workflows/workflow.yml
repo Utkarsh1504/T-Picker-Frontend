@@ -1,4 +1,4 @@
-name: Workflow for Codecov Action
+name: Codecov Action
 on: [push, pull_request]
 jobs:
   run:
@@ -17,3 +17,7 @@ jobs:
         with:
           token: ${{ secrets.CODECOV_TOKEN }}
           file: ./coverage/clover.xml
+          flags: unittests # optional
+          name: codecov-umbrella # optional
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)
