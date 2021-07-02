@@ -27,6 +27,9 @@ jobs:
 
     - name: Run the tests
       run: npm test -- --coverage
-      
+
     - name: Code Coverage Report
-      uses: romeovs/lcov-reporter-action@v0.2.11
+      uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
+        fail_ci_if_error: true
