@@ -14,8 +14,12 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "jest --coverage",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/*.*",
+    "test": "yarn run test-script && yarn run test-calculator && yarn run test-coverage",
+    "test-calculator": "jest --testPathPattern=demo/calculator/ --coverage --coverageDirectory=coverage/calculator",
+    "test-coverage": "jest --testPathPattern=demo/coverage-test/ --coverage --coverageDirectory=coverage/coverage-test",
+    "test-script": "jest --testPathPattern=src/ --coverage --coverageDirectory=coverage/script",
   },
   "eslintConfig": {
     "extends": [
